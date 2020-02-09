@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, session
 from datetime import datetime
 
 app = Flask(__name__)
-client = MongoClient("mongodb+srv://admin:admin@cluster0-e5pzb.mongodb.net/test?retryWrites=true&w=majority")
+client = MongoClient("mongodb+srv://admin:admin@cluster0-e5pzb.mongodb.net/test?retryWrites=true&w=jority")
 db = client['Blueprint-2020'] #database - only one necessary
 zodiac_key = db['zodiac_key'] #collection - perfect zodiac key
 data = db['data'] #collection - actual user data - will hold single and total session data
@@ -36,12 +36,6 @@ def next(page_num):
 
 # @app.route('/', defaults=('path': ''))
 # @app.route('/<path:path>'')
-
-app.run(port=3000, debug=True)
-@app.route('/next', methods=['GET', 'POST'])
-def next():
-    page_num += 1
-    return render_template('questionpage.html', question=question_dict[page_num], answers=answer_dict[page_num])
 
 @app.route('/birthday', methods=['POST'])
 def birthday():
@@ -81,3 +75,5 @@ def stats():
     #add info to all_data doc in data collection
     #do calculations
     #clear out current user doc
+
+app.run(port=3000, debug=True)
