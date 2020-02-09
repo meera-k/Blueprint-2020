@@ -1,39 +1,54 @@
 console.log("hello world");
 
-function getRandomDog() {
-    //alert("NOW GETTING A DOG!!!!!!11!!!1!");
-    fetch("https://dog.ceo/api/breeds/image/random")
-        .then(res => res.json())
-        .then(function(data) {
-            document.querySelector("#dog-image").style.backgroundImage = `url(${data.message})`;
-          });
-}
-
-function getSpecificDog() {
-    const name = document.querySelector("#dog-name").value;
-    fetch(`https://dog.ceo/api/breed/${name}/images/random`)
-        .then(res => res.json())
-        .then(function (data) {
-            if (data.status === "error") {
-                alert("Can't find dog...");
-            } else {
-                document.querySelector("#dog-image").style.backgroundImage = `url(${data.message})`;
-            }
-        })
-}
+let month;
 
 function startQuiz() {
     alert("go to quiz");
     //document.querySelector("#body").style.backgroundImage = ---
 }
 
-window.transitionToPage = function(href) {
+window.transitionToPage = function (href) {
     document.querySelector('body').style.opacity = 0;
-    this.setTimeout(function() {
+    this.setTimeout(function () {
         window.location.href = href
-    },500)
+    }, 500)
 }
 
-document.addEventListener('DOMContentLoaded', function(event) {
+document.addEventListener('DOMContentLoaded', function (event) {
     document.querySelector('body').style.opacity = 1;
 })
+
+function getNumDays() {
+    console.log(month);
+    switch (month) {
+        case "2":
+            console.log(28)
+            return 28;
+        case "4":
+        case "6":
+        case "9":
+        case "11":
+            console.log(30)
+            return 30;
+        default:
+            console.log(31)
+            return 31;
+    }
+}
+
+function setDay() {
+    console.log("hi");
+    month = document.getElementById("month").options[document.getElementById("month").selectedIndex].value;
+    console.log(month);
+    
+}
+
+function getMonth() {
+    return month;
+}
+
+function printDays() {
+    for(var d=1;d<=getNumDays();d++) {
+        document.write("<option>"+d+"</option>");
+    }
+}
