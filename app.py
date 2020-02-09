@@ -8,7 +8,7 @@ db = client['Blueprint-2020'] #database - only one necessary
 zodiac_key = db['zodiac_key'] #collection - perfect zodiac key
 data = db['data'] #collection - actual user data - will hold single and total session data
 page_num = 0
-question_dict = {1: "",2: "",3: ""}
+question_dict = {1: "", 2: "", 3: ""}
 answer_dict = {1: ["smart", "dumb"], 2: ["smart", "dumb"], 3: ["smart", "dumb"],}
 
 @app.route('/', methods=['GET']) #specifies path and which methods it will work w
@@ -24,6 +24,7 @@ def next():
 @app.route('/birthday', methods=['POST'])
 def birthday():
     #TODO make sure that info is passed in in datetime format
+    #add zodiac into cur_user doc as last entry
 
 @app.route('/stats', methods=['GET'])
 def stats():
