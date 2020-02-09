@@ -6,7 +6,8 @@ app = Flask(__name__)
 client = MongoClient("mongodb+srv://admin:admin@cluster0-e5pzb.mongodb.net/test?retryWrites=true&w=jority")
 db = client['Blueprint-2020'] #database - only one necessary
 zodiac_key = db['zodiac_key'] #collection - perfect zodiac key
-data = db['data'] #collection - actual user data - will hold single and total session data
+total_data = db['total_data'] #collection - actual user data - will hold single and total session data
+single_data = db['single_data']
 # page_num = 0
 question_dict = {1: "are you smart 1", 2: "brain2", 3: "bIgBrAiN3"}
 answer_dict = {1: ["smart1", "dumb1"], 2: ["smart2", "dumb2"], 3: ["smart3", "dumb3"]}
@@ -19,6 +20,7 @@ def welcome_page():
 def next(page_num):
     # page_num+=1
     # x = "bruhhh"
+    data[int(page_num)]
     print (answer_dict[(int(page_num))])
     return render_template('quiz.html', page_num=page_num, question=question_dict[int(page_num)], answers=answer_dict[int(page_num)])
     #return render_template('questionpage.html', question_dict[page_num], answer_dict[page_num])
@@ -71,7 +73,7 @@ def birthday():
 
 @app.route('/stats', methods=['GET'])
 def stats():
-    
+
     return 'f'
     #add info to all_data doc in data collection
     #do calculations
