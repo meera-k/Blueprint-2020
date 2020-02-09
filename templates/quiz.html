@@ -4,29 +4,30 @@
 <head>
     <title>Quiz</title>
     <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="quiz.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='quiz.css') }}">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='quiz.js') }}" ></script>
 </head>
 
 <body>
     <h1>Q U I Z</h1>
 
     <form action="http://urmomgay.com/">
+        <!-- <p>{{x}}</p> -->
         <p>{{ page_num }}</p>
         <div class="choices">
             <div class="choice">
                 <input type="radio" id="contactChoice1"
                 name="contact" value="email">
-                <label style = "color:white;" for="contactChoice1">{{ answer_dict[page_num][0] }}</label>
+                <label style = "color:white;" for="contactChoice1">{{ answers[0] }}</label>
             </div>
             <div class="choice">
                 <input type="radio" id="contactChoice2"
                 name="contact" value="phone">
-                <label style = "color:white;" for="contactChoice2">{{ answer_dict[page_num][1] }}</label>
-            </div>
-            <div class="choice">
-                <input type="radio" id="contactChoice3"
-                name="contact" value="mail">
-                <label style = "color:white;" for="contactChoice3">{{ answer_dict[page_num][2] }}</label>
+                <label style = "color:white;" for="contactChoice2">{{ answers[1] }}</label>
             </div>
         </div>
         <div>
