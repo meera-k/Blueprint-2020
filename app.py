@@ -9,7 +9,7 @@ zodiac_key = db['zodiac_key'] #collection - perfect zodiac key
 data = db['data'] #collection - actual user data - will hold single and total session data
 page_num = 0
 question_dict = {1: "", 2: "", 3: ""}
-answer_dict = {1: ["smart", "dumb"], 2: ["smart", "dumb"], 3: ["smart", "dumb"],}
+answer_dict = {1: ["smart", "dumb"], 2: ["smart", "dumb"], 3: ["smart", "dumb"]}
 
 @app.route('/', methods=['GET']) #specifies path and which methods it will work w
 def welcome_page():
@@ -18,7 +18,7 @@ def welcome_page():
 
 @app.route('/next', methods=['GET', 'POST'])
 def next():
-    page_num++
+    page_num+=1
     return render_template('questionpage.html', question_dict[page_num], answer_dict[page_num])
 
 @app.route('/birthday', methods=['POST'])
