@@ -13,7 +13,7 @@
     <p>Enter birthday:</p>
 
     <form action = "https://urmomgay.com/">
-        <select name="month" id = "month" onchange="setDay()" >
+        <select name="month" id = "month" >
             <option value = "0">--Select One--</option>
             <option value="1">January</option>
             <option value="2">February</option>
@@ -30,23 +30,14 @@
         </select>
         <script src = "../static/quiz.js"></script>
         <select name = "day" id = "day" onclick="getNumDays()">
-            <script language="javascript" type="text/javascript"> 
-            if(getMonth() != 0) var days = getNumDays();
-            console.log("Help");
-            for(var d=1;d<=days;d++) {
+            <script language="javascript" type="text/javascript">  
+            for(var d=1;d<=31;d++) {
                 document.write("<option>"+d+"</option>");
             }
             </script>
         </select>
         <button>Submit</button>
     </form>
-
-    <!---select tag for dropdown 
-      html 
-      post
-      question_dict[page_num]
-      answer_dict[page_num]
-      -->
 </body>
 
 </html>

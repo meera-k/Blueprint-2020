@@ -10,7 +10,7 @@ single_data = []
 
 @app.route('/', methods=['GET']) #specifies path and which methods it will work w
 def home():
-    return render_template('quiz.html') #returns html file sent to browser given the file and parameter for variables
+    return render_template('questions.html') #returns html file sent to browser given the file and parameter for variables
 
 # @app.route('/stats', methods=['GET'])
 # def stats():
@@ -20,7 +20,7 @@ def home():
 
 @app.route('/birthday', methods=['POST'])
 def birthday():
-    birthday = datetime.strptime(request.form['date'], '%m/%d/%y')
+    birthday = datetime.strptime(request.form['date'], '%m/%d/%y') #TODO month and day
     if birthday < datetime(2020, 1, 20) or datetime(2020, 12, 23) < birthday:
         single_data.append('Capricorn')
     elif datetime(2020, 1, 21) < birthday < datetime(2020, 2, 19):
