@@ -1,7 +1,11 @@
 p {
-    color: red;
+    color: white;
     font-size: 1.5rem;
-    margin-left: 20px;
+}
+
+h1 {
+    color:white;
+    text-align:center;
 }
 
 .hello {
@@ -18,16 +22,20 @@ p {
 }
 
 body {
-    font-family: "Raleway", sans-serif;
+    font-family: "Comfortaa", cursive;
     background-image: url("https://wallpaperaccess.com/full/392777.jpg");
     background-repeat: no-repeat;
     background-position: center;
+    margin:40px;
+    align-items: center;
+    opacity: 1;
+   transition: opacity .5s;
 }
 
-.button {
+button {
     background-color: 	#a8efff;
     border: none;
-    color: white;
+    color: rgb(0, 47, 61);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -58,7 +66,7 @@ body {
       margin: 20px 20px 20px 20px;
   }
 
-  input {
+  /*input {
       width: 40%;
       padding: 12px 40px;
       margin: 10px 0;
@@ -71,10 +79,41 @@ body {
       box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
       font-family: "Raleway", sans-serif;
       font-size: 12px;
+  }*/
+  
+  input {
+      margin-right: 10px;
   }
+
 
   .button-container {
       display: flex;
       flex-direction: row;
       margin-top: 15px;
   }
+
+  .label {
+      display: flex;
+      align-items: left;
+      color: white;
+  }
+
+.choices {
+    display: flex;
+    flex-direction: column;
+}
+
+.choice {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    
+}
+
+.choice:hover {
+    font-size: larger;
+}
+
+button:hover {
+    font-size: larger;
+}
