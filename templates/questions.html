@@ -5,7 +5,11 @@
     <title>Quiz</title>
     <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../static/quiz.css">
-</head>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='main.js') }}" ></script></head>
 
 <body>
     <div class="body-content"></div>
@@ -527,7 +531,22 @@
         </form>
     </div>
 
-    <script src="../static/quiz.js"></script>
+    <script>
+        $('#submit').click(function() {
+            //const sign = $('#message').val()
+            var signs = [];
+            var choices = document.querySelectorAll('[id^=textbox]')
+            for (var choice in choices) {
+                signs.push(choice.val());
+            }
+            $.post('/submit', {
+                message: sign,
+                raw_single: signs
+            }).done(function() {
+                document.location.reload();
+            });
+        });
+    </script>
     </div>
 </body>
 

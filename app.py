@@ -11,6 +11,10 @@ signs_array = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "
 
 @app.route('/', methods=['GET']) #specifies path and which methods it will work w
 def home(): 
+    return render_template('welcomepage.html')
+
+@app.route('/start', methods=['GET']) #specifies path and which methods it will work w
+def start_button():
     return render_template('questions.html') #returns html file sent to browser given the file and parameter for variables
 
 # @app.route('/stats', methods=['GET'])
@@ -21,6 +25,7 @@ def home():
 
 @app.route('/submit', methods=['POST'])
 def submit():
+    print("in python rn")
     raw_single = request.form['raw_single']
     for x in range(0, raw_single.length):
         if raw_single[x] == "Aries":
@@ -58,7 +63,8 @@ def submit():
         total_data[0]+=1
     total_data[1]+=1
     percent_wrong = total_data[0]/total_data[1]
-    return render_template('results.html', matches=matches, predicted_sign=sign, actual_sign=single_data[12], percent_wrong=percent_wrong)
+    return "hello world"
+    #return render_template('results.html', matches=matches, predicted_sign=sign, actual_sign=single_data[12], percent_wrong=percent_wrong)
 
 @app.route('/birthday', methods=['POST'])
 def birthday():
