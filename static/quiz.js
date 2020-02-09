@@ -21,3 +21,19 @@ function getSpecificDog() {
             }
         })
 }
+
+function startQuiz() {
+    alert("go to quiz");
+    //document.querySelector("#body").style.backgroundImage = ---
+}
+
+window.transitionToPage = function(href) {
+    document.querySelector('body').style.opacity = 0;
+    this.setTimeout(function() {
+        window.location.href = href
+    },500)
+}
+
+document.addEventListener('DOMContentLoaded', function(event) {
+    document.querySelector('body').style.opacity = 1;
+})
