@@ -63,8 +63,7 @@ def submit():
         total_data[0]+=1
     total_data[1]+=1
     percent_wrong = total_data[0]/total_data[1]
-    return "hello world"
-    #return render_template('results.html', matches=matches, predicted_sign=sign, actual_sign=single_data[12], percent_wrong=percent_wrong)
+    return render_template('results.html', matches=matches, predicted_sign=sign, actual_sign=single_data[12], percent_wrong=percent_wrong)
 
 @app.route('/birthday', methods=['POST'])
 def birthday():

@@ -526,27 +526,12 @@
     </div>
 
     <div style="text-align:center;">
-        <form action="results.html">
-            <button class="button submit" id="submit">submit</button>
+        <form>
+            <button class="button submit" id="submit" onclick="submit_form()">submit</button>
         </form>
     </div>
 
-    <script>
-        $('#submit').click(function() {
-            //const sign = $('#message').val()
-            var signs = [];
-            var choices = document.querySelectorAll('[id^=textbox]')
-            for (var choice in choices) {
-                signs.push(choice.val());
-            }
-            $.post('/submit', {
-                message: sign,
-                raw_single: signs
-            }).done(function() {
-                document.location.reload();
-            });
-        });
-    </script>
+    <script src="../static/main.js"></script>
     </div>
 </body>
 

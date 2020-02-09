@@ -6,7 +6,7 @@ $(document).ready(function() { //document object becomes jquery object in $(); t
     //         document.location.reload();
     //     });
     // });
-    $('#submit').click(function() {
+    var submit_form = function() {
         //const sign = $('#message').val()
         var signs = [];
         var choices = document.querySelectorAll('[id^=textbox]')
@@ -17,8 +17,9 @@ $(document).ready(function() { //document object becomes jquery object in $(); t
             message: sign,
             raw_single: signs
         }).done(function() {
-            document.location.reload();
+            console.log("in submit form function")
+            // document.location.reload();
         });
-    });
+    };
 
 });
