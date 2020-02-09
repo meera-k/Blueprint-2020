@@ -25,8 +25,8 @@ body {
     font-family: "Comfortaa", cursive;
     background-image: url(https://i.ya-webdesign.com/images/star-png-transparent-background-6.png), linear-gradient(to bottom right, #00858c, #000842);
     background-repeat: repeat, no-repeat;
+    background-size: contain, cover;
     background-position: center, center;
-
 }
 
 button {
@@ -251,4 +251,14 @@ button:hover {
     flex-direction: row;
     justify-content: space-evenly;
     margin-right:150px;
+}
+
+.spacing {
+    display: flex;
+    flex-direction: column;
+}
+
+#result {
+    display: flex;
+    flex-direction: column;
 }

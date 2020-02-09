@@ -8,9 +8,29 @@
     <link rel="stylesheet" type="text/css" href="../static/quiz.css">
 </head>
 
+<!-- matches, predicted_sign, actual_sign -->
+
 <body>
-    <div class="body-content">
-        
+    <h1 class = "body-content" >
+        <div class="body-content" id = result>
+            <div>
+                Predicted zodiac sign: predicted_sign
+            </div>
+            <div>
+                Actual zodiac sign: actual_sign
+            </div>
+            {%if matches%} 
+            <div class = "result">
+                Your zodiac sign matches your personality. That's different from percent_wrong% of quiz takers, who have a sign different than the one they should have.
+            </div>
+            {%else%}
+            <div class = "result">
+                Your zodiac sign does not match your personality, which is like percent_wrong% of quiz takers.
+            </div>
+            <div>
+                percent_wrong
+            </div>
+        </div>
     </div>
 </body>
 
