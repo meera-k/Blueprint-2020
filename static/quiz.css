@@ -23,13 +23,10 @@ h1 {
 
 body {
     font-family: "Comfortaa", cursive;
-    background-image: url("https://wallpaperaccess.com/full/392777.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    margin:40px;
-    align-items: center;
-    opacity: 1;
-   transition: opacity .5s;
+    background-image: url(https://i.ya-webdesign.com/images/star-png-transparent-background-6.png), linear-gradient(to bottom right, #00858c, #000842);
+    background-repeat: repeat, no-repeat;
+    background-position: center, center;
+
 }
 
 button {
@@ -47,23 +44,16 @@ button {
     cursor: pointer;
   }
 
+  #submit {
+      margin: 100px;
+  }
+
 
   .body-content {
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 50px;
-  }
-
-  .image {
-      width: 300px;
-      height: 300px;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-image: url("https://animals.net/wp-content/uploads/2019/03/Shiba-Inu-4-650x425.jpg");
-      border-radius: 150px;
-      margin: 20px 20px 20px 20px;
   }
 
   /*input {
@@ -116,4 +106,149 @@ button {
 
 button:hover {
     font-size: larger;
+}
+
+.checkbox-container {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    text-align:center;
+  padding: 0px 0px;
+  margin-left: 30px;
+}
+
+.input-title {
+    clear: both;
+    padding: 22px 0px 0px 0px;
+    font-size: 16px;
+    color: rgba(255,255,255,.6);
+    font-weight: 300;
+}
+
+
+
+
+/* Styling Checkbox Starts */
+.checkbox-label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 24px;
+    height: 24px;
+    width: 24px;
+    clear: both;
+}
+
+.checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox-label .checkbox-custom {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 24px;
+    width: 24px;
+    background-color: transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    border: 2px solid #FFFFFF;
+}
+
+
+.checkbox-label input:checked ~ .checkbox-custom {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    -webkit-transform: rotate(0deg) scale(1);
+    -ms-transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1);
+    opacity:1;
+    border: 2px solid #FFFFFF;
+}
+
+
+.checkbox-label .checkbox-custom::after {
+    position: absolute;
+    content: "";
+    left: 12px;
+    top: 12px;
+    height: 0px;
+    width: 0px;
+    border-radius: 5px;
+    border: solid #009BFF;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(0deg) scale(0);
+    -ms-transform: rotate(0deg) scale(0);
+    transform: rotate(0deg) scale(0);
+    opacity:1;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+
+.checkbox-label input:checked ~ .checkbox-custom::after {
+  -webkit-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+  opacity:1;
+  left: 8px;
+  top: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid #009BFF;
+  border-width: 0 2px 2px 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+
+
+/* For Ripple Effect */
+.checkbox-label .checkbox-custom::before {
+    position: absolute;
+    content: "";
+    left: 10px;
+    top: 10px;
+    width: 0px;
+    height: 0px;
+    border-radius: 5px;
+    border: 2px solid #FFFFFF;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);    
+}
+
+.checkbox-label input:checked ~ .checkbox-custom::before {
+    left: -3px;
+    top: -3px;
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+    -webkit-transform: scale(3);
+    -ms-transform: scale(3);
+    transform: scale(3);
+    opacity:0;
+    z-index: 999;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+.theChoices {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-right:150px;
 }
