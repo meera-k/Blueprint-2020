@@ -19,7 +19,8 @@ def welcome_page():
 @app.route('/next', methods=['GET', 'POST'])
 def next():
     page_num+=1
-    return render_template('questionpage.html', question_dict[page_num], answer_dict[page_num])
+    return render_template('questionpage.html', page_num)
+    #return render_template('questionpage.html', question_dict[page_num], answer_dict[page_num])
 
 @app.route('/birthday', methods=['POST'])
 def birthday():
