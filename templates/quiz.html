@@ -15,10 +15,10 @@
 <body>
     <h1>Q U I Z</h1>
 
-    <form action="http://127.0.0.1:3000/quiz/" + {{ page_num+1 }}>
+    <form>
         <!-- <p>{{x}}</p> -->
-        <p>page {{ page_num }}</p>
-        <p>{{ question }}</p>
+        <p id="head">page {{ page_num }}</p>
+        <p id="question">{{ question }}</p>
         <div class="choices">
             <div class="choice">
                 <input type="radio" id="contactChoice1"
