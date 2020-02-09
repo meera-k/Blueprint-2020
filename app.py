@@ -52,9 +52,9 @@ def submit():
         if single_data[x] > max:
             max = single_data[x]
     sign = signs_array[x]
-    matches = true
+    matches = True
     if sign != single_data[12]:
-        matches = false
+        matches = False
         total_data[0]+=1
     total_data[1]+=1
     percent_wrong = total_data[0]/total_data[1]
