@@ -17,6 +17,11 @@ def home():
 def start_button():
     return render_template('questions.html') #returns html file sent to browser given the file and parameter for variables
 
+@app.route('/results', methods=['GET']) #specifies path and which methods it will work w
+def results():
+    return render_template('results.html') #returns html file sent to browser given the file and parameter for variables
+
+
 # @app.route('/stats', methods=['GET'])
 # def stats():
 #     #add info to all_data doc in data collection
@@ -25,48 +30,50 @@ def start_button():
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    print("in python rn")
-    raw_single = request.form['raw_single']
-    for x in range(0, raw_single.length):
-        if raw_single[x] == "Aries":
-            single_data[0]+=1
-        elif raw_single[x] == "Taurus":
-            single_data[1]+=1
-        elif raw_single[x] == "Gemini":
-            single_data[2]+=1
-        elif raw_single[x] == "Cancer":
-            single_data[3]+=1
-        elif raw_single[x] == "Leo":
-            single_data[4]+=1
-        elif raw_single[x] == "Virgo":
-            single_data[5]+=1
-        elif raw_single[x] == "Libra":
-            single_data[6]+=1
-        elif raw_single[x] == "Scorpio":
-            single_data[7]+=1   
-        elif raw_single[x] == "Sagittarius":
-            single_data[8]+=1
-        elif raw_single[x] == "Capricorn":
-            single_data[9]+=1
-        elif raw_single[x] == "Aquarius":
-            single_data[10]+=1
-        elif raw_single[x] == "Pisces":
-            single_data[11]+=1
-    max = 0
-    for x in range (0, len(single_data)):
-        if single_data[x] > max:
-            max = single_data[x]
-    sign = signs_array[x]
-    matches = True
-    if sign != single_data[12]:
-        matches = False
-        total_data[0]+=1
-    total_data[1]+=1
-    percent_wrong = total_data[0]/total_data[1]
-    return render_template('results.html', matches=matches, predicted_sign=sign, actual_sign=single_data[12], percent_wrong=percent_wrong)
+    # print("in python rn")
+    # print(request.json)
+    # raw_single = request.form['raw_single']
+    # for x in range(0, raw_single.length):
+    #     if raw_single[x] == "Aries":
+    #         single_data[0]+=1
+    #     elif raw_single[x] == "Taurus":
+    #         single_data[1]+=1
+    #     elif raw_single[x] == "Gemini":
+    #         single_data[2]+=1
+    #     elif raw_single[x] == "Cancer":
+    #         single_data[3]+=1
+    #     elif raw_single[x] == "Leo":
+    #         single_data[4]+=1
+    #     elif raw_single[x] == "Virgo":
+    #         single_data[5]+=1
+    #     elif raw_single[x] == "Libra":
+    #         single_data[6]+=1
+    #     elif raw_single[x] == "Scorpio":
+    #         single_data[7]+=1   
+    #     elif raw_single[x] == "Sagittarius":
+    #         single_data[8]+=1
+    #     elif raw_single[x] == "Capricorn":
+    #         single_data[9]+=1
+    #     elif raw_single[x] == "Aquarius":
+    #         single_data[10]+=1
+    #     elif raw_single[x] == "Pisces":
+    #         single_data[11]+=1
+    # max = 0
+    # for x in range (0, len(single_data)):
+    #     if single_data[x] > max:
+    #         max = single_data[x]
+    # sign = signs_array[x]
+    # matches = True
+    # if sign != single_data[12]:
+    #     matches = False
+    #     total_data[0]+=1
+    # total_data[1]+=1
+    # percent_wrong = total_data[0]/total_data[1]
+    return render_template('results.html', matches=True)
 
 @app.route('/birthday', methods=['POST'])
 def birthday():
+
     birthday = datetime.strptime(request.form['date'], '%m/%d/%y') #TODO month and day
     if birthday < datetime(2020, 1, 20) or datetime(2020, 12, 23) < birthday:
         single_data.append('Capricorn')
