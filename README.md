@@ -1,2 +1,2 @@
 # Blueprint-2020
-Blueprint 2020 zodiac project
+Blueprint 2020 zodiac project 
